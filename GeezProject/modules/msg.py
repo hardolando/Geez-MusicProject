@@ -1,5 +1,5 @@
 # Daisyxmusic (Telegram bot project )
-# Copyright (C) 2021  Inukaasith
+# Copyright (C) 2021  Papanda
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -20,47 +20,55 @@ class Messages():
       HELP_MSG = [
         ".",
 f"""
-**Hey 👋 Selamat datang kembali di {PROJECT_NAME}
+**Halo anak anjing, welcome to {PROJECT_NAME} .
 
-✣️ {PROJECT_NAME} dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah.
+✣️ {PROJECT_NAME} Adalah bot A§V, 
 
-✣️ Assistant Music » @{ASSISTANT_NAME}\n\nKlik Next untuk instruksi**
+✣️ @{ASSISTANT_NAME} Ini Babu nya**
 
 """,
 
 f"""
-**Pengaturan**
+**My Rules**
 
-1. Jadikan bot sebagai admin
-2. Mulai obrolan suara / VCG
-3. Ketik `/userbotjoin` dan coba /play <nama lagu>
-× Jika Assistant Bot bergabung selamat menikmati musik, 
-× Jika Assistant Bot tidak bergabung Silahkan Tambahkan @{ASSISTANT_NAME} ke grup Anda dan coba lagi
+1. Jadiin botnya admin di gc lu
+2. Nyalain VCG
+3. Ketik `/userbotjoin` terus pake cmd /play <masukin judul lagu>
+× Kalian bisa disebut berhasil kalo babu bot nya masuk ke GC kalian
+× Kalo gak masuk massuk, tinggal tambahin @{ASSISTANT_NAME} ke GC kalian
 
 
-**» Perintah Untuk dalam grup Member Juga Bisa :**
+**» Perintah nya :**
 
- × /playlist : Untuk Menampilkan daftar putar Lagu sekarang
- × /current : Untuk Menunjukkan  Lagu sekarang yang sedang diputar
- × /song <judul lagu> : Untuk Mendownload lagu di YouTube 
- × /video <judul lagu> : Untuk Mendownload Video di YouTube dengan detail
- × /vsong <judul lagu> : Untuk Mendownload Video di YouTube dengan detail
- × /deezer <judul lagu> : Untuk Mendownload lagu dari deezer 
- × /saavn <judul lagu> : Untuk Mendownload lagu dari website saavn
- × /search <judul lagu> : Untuk Mencari Video di YouTube dengan detail
+ × /playlist : Nampilin daftar lagu yang diputer
+ × /current : Nampilin Lagu yang lagi diputer
+ × /song <Masukin Judul lagu> : Download lagu via YouTube
+ × /video <Masukin judul lagu> : Download Video di YouTube lebih detail
+ × /vsong <Masukin judul lagu> : Download Video di YouTube lebih detail
+ × /deezer <Masukin judul lagu> : Download lagu via deezer 
+ × /saavn <Masukin judul lagu> : Download lagu via website saavn
+ × /search <Masukin judul lagu> : Nyari Video via YouTube
 
-**» Perintah Hanya Untuk Admin :**
+**» Cuma Admin yang bisa :**
 
-× /play <judul lagu> : Untuk Memutar lagu yang Anda minta melalui youtube
-× /play <link yt> : Untuk Memutar lagu yang Anda minta melalui link youtube
-× /play <reply ke audio> : Untuk Memutar lagu yang Anda minta melalui file audio
-× /dplay : Untuk Memutar lagu yang Anda minta melalui deezer
-× /splay : Untuk Memutar lagu yang Anda minta melalui jio saavn
-× /skip : Untuk Menskip pemutaran lagu ke Lagu berikutnya
-× /pause : Untuk Menjeda pemutaran Lagu
-× /resume : Untuk Melanjutkan pemutaran Lagu yang di pause
-× /end : Untuk Memberhentikan pemutaran Lagu
-× /userbotjoin - Untuk Mengundang asisten ke obrolan Anda
-× /admincache - Untuk MemRefresh admin list
+× /play <Masukin judul lagu> : Muter lagu via YouTube premium 😏
+× /play <link YouTube> : Muter lagu Via YouTube Premium
+× /play <reply ke audio> : Muter Lagu via reply audio file 
+× /dplay : Muter lagu via deezer play music
+× /splay : Muter lagu via jio saavnn Music
+× /skip : Skip lagu yang gak penting
+× /pause : Jeda lagu kalo lu pas ngeue
+× /resume : HANYA ORANG BEGO YANG PAKE COMMAND /Pause TERUS DI /Resume LAGI.
+× /end : Matiin Lagu nya
+× /userbotjoin - Buat masukin babu gua 
+× /admincache - refresh adminlist
+
+ALL HAIL A§V GROUP
+BANZAI A§V TEAM
+
+IDGF BOUT UR LIFE
+JUST JOIN ON MY MAIN CHANNRL AND MAIN GROUP
 """
+            Text = "LIST A§V GROUP DOWN BELOW:\n\n○ A§ID : <a href='https://t.me/asupanviralid'>MAIN CHANNEL</a>\n○ A§ID2 : <a href='https://t.me/asupanviralid2'>RARE CHANNEL</a>\n○ BOVCHIL : <a href='https://t.me/asupanviralbovhcil'>UNDERAGES</a>\n\nA§V MAIN GROUP:\n\n○ GROUP: <a href='https://t.me/INFOLINKASV'>CLICK ME</a>"
+ 
       ]
