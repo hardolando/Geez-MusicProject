@@ -1,6 +1,6 @@
-# Daisyxmusic (Telegram bot project)
-# Copyright (C) 2021  Inukaasith
-# Copyright (C) 2021  TheHamkerCat (Python_ARQ)
+# Bapak kau music bot (Telegram bot project)
+# Copyright (C) 2021  Papanda
+# Copyright (C) 2021  A§V TEAM (Python_ARQ)
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
@@ -119,15 +119,15 @@ def r_ply(type_):
     mar = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("⏹", "cetop"),
-                InlineKeyboardButton("⏸", "cepause"),
-                InlineKeyboardButton("▶️", "ceresume"),
-                InlineKeyboardButton("⏭", "cekip"),
+                InlineKeyboardButton("⏹", "cstop"),
+                InlineKeyboardButton("⏸", "cpause"),
+                InlineKeyboardButton("▶️", "cresume"),
+                InlineKeyboardButton("⏭", "cskip"),
             ],
             [
-                InlineKeyboardButton("Playlist 📖", "cplaylist"),
+                InlineKeyboardButton("Daftar lagu", "cplaylist"),
             ],
-            [InlineKeyboardButton("Tutup", "ccls")],
+            [InlineKeyboardButton("Tutuplah", "ccls")],
         ]
     )
     return mar
@@ -312,13 +312,13 @@ async def m_cb(b, cb):
         marr = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏹", "cetop"),
-                    InlineKeyboardButton("⏸", "cepuse"),
-                    InlineKeyboardButton("▶️", "ceresume"),
-                    InlineKeyboardButton("⏭", "cekip"),
+                    InlineKeyboardButton("⏹", "cstop"),
+                    InlineKeyboardButton("⏸", "cpuse"),
+                    InlineKeyboardButton("▶️", "cresume"),
+                    InlineKeyboardButton("⏭", "cskip"),
                 ],
                 [
-                    InlineKeyboardButton("Playlist 📖", "cplaylist"),
+                    InlineKeyboardButton("Daftar lagu", "cplaylist"),
                 ],
                 [InlineKeyboardButton("Tutup aja", "ccls")],
             ]
@@ -462,7 +462,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📖 Playlist", callback_data="cplaylist"),
+                    InlineKeyboardButton("Daftar Lagu", callback_data="cplaylist"),
                     InlineKeyboardButton("Menu ", callback_data="cmenu"),
                 ],
                 [InlineKeyboardButton(text="tutup aja ah", callback_data="ccls")],
@@ -509,7 +509,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📖 Playlist", callback_data="cplaylist"),
+                    InlineKeyboardButton("Daftar Lagu", callback_data="cplaylist"),
                     InlineKeyboardButton("Menu ", callback_data="cmenu"),
                 ],
                 [
@@ -554,7 +554,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Daftar ", callback_data="cplaylist"),
+                    InlineKeyboardButton("Daftar Lagu", callback_data="cplaylist"),
                     InlineKeyboardButton("Menu ", callback_data="cmenu"),
                 ],
                 [
@@ -666,7 +666,7 @@ async def deezer(client: Client, message_: Message):
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} Userbot not in this channel, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} Kawan gua gak disini, Suruh admin lu buat ketik cmd /play atau tambahin kawan guanini {user.first_name} sendiri</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -675,7 +675,7 @@ async def deezer(client: Client, message_: Message):
     queryy = text[1]
     query=queryy
     res = lel
-    await res.edit(f"Searching 👀👀👀 for `{queryy}` on deezer")
+    await res.edit(f"Bentar gua nyari `{queryy}` di pasar")
     try:
         songs = await arq.deezer(query,1)
         if not songs.ok:
@@ -687,24 +687,24 @@ async def deezer(client: Client, message_: Message):
         duration = songs.result[0].duration
         thumbnail = songs.result[0].thumbnail
     except:
-        await res.edit("Found Literally Nothing, You Should Work On Your English!")
+        await res.edit("Kaga nemu apa apa gua. pake bahasa inggris lah tot kan gua orang jepang")
         return
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="cplaylist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="cmenu"),
+                InlineKeyboardButton("Daftar Lagu", callback_data="cplaylist"),
+                InlineKeyboardButton("Me", callback_data="cmenu"),
             ],
-            [InlineKeyboardButton(text="Listen On Deezer 🎬", url=f"{url}")],
-            [InlineKeyboardButton(text="❌ Close", callback_data="ccls")],
+            [InlineKeyboardButton(text="Dengerin di pasar", url=f"{url}")],
+            [InlineKeyboardButton(text="Tutup aja ah", callback_data="ccls")],
         ]
     )
     file_path = await convert(wget.download(url))
-    await res.edit("Generating Thumbnail")
+    await res.edit("Sabar mek")
     await generate_cover(requested_by, title, artist, duration, thumbnail)
     chat_id = chid
     if chat_id in callsmusic.pytgcalls.active_calls:
-        await res.edit("adding in queue")
+        await res.edit("Gua tambahin ke antrian")
         position = await queues.put(chat_id, file=file_path)
         qeue = que.get(chat_id)
         s_name = title
@@ -712,9 +712,9 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"{bn}= #️⃣ Queued at position {position}")
+        await res.edit_text(f"{bn}= #️masuk antrian nomor {position}")
     else:
-        await res.edit_text(f"{bn}=▶️ Playing.....")
+        await res.edit_text(f"{bn}=▶️ nyanyi")
 
         que[chat_id] = []
         qeue = que.get(chat_id)
@@ -731,7 +731,7 @@ async def deezer(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"Playing [{title}]({url}) Via Deezer in Linked Channel",
+        caption=f"nyanyi [{title}]({url}) cover suara gua sangat amat merdu",
     )
     os.remove("final.png")
 
@@ -740,23 +740,23 @@ async def deezer(client: Client, message_: Message):
 @authorized_users_only
 async def jiosaavn(client: Client, message_: Message):
     global que
-    lel = await message_.reply("🔄 **Processing**")
+    lel = await message_.reply("🔄 **Bentar...**")
     try:
       conchat = await client.get_chat(message_.chat.id)
       conid = conchat.linked_chat.id
       conv = conchat.linked_chat
       chid = conid
     except:
-      await message_.reply("Is chat even linked")
+      await message_.reply("Bapak kau jelek")
       return
     try:
       administrators = await get_administrators(conv)
     except:
-      await message.reply("Am I admin of Channel")
+      await message.reply("Gua udah di adminin belom si")
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "GeezProject"
+        user.first_name = "Musiknya nyokap lu"
     usar = user
     wew = usar.id
     try:
@@ -767,21 +767,21 @@ async def jiosaavn(client: Client, message_: Message):
             if administrator == message_.from_user.id:
                 if message_.chat.title.startswith("Channel Music: "):
                     await lel.edit(
-                        "<b>Remember to add helper to your channel</b>",
+                        "<b>Jangan lupa tambahin kawan gua kemari</b>",
                     )
                     pass
                 try:
                     invitelink = await client.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Add me as admin of yor group first</b>",
+                        "<b>Jadiin gua admin dulu cok</b>",
                     )
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await lel.edit(
-                        "<b>helper userbot joined your channel</b>",
+                        "<b>Akhirnya kawan gua masuk sini juga</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -789,15 +789,15 @@ async def jiosaavn(client: Client, message_: Message):
                 except Exception:
                     # print(e)
                     await lel.edit(
-                        f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your channel due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add @DaisyXmusic to your Group and try again</b>",
+                        f"<b>Kok lag cok?\ndia {user.first_name} kaga bisa masuk sini, apa jangan jangan lu banned kawan hua"
+                        "\n\nAtau masukin sendiri dah kemari </b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            "<i> helper Userbot not in this channel, Ask channel admin to send /play command for first time or add assistant manually</i>"
+            "<i> Kawan gua gak ada dimari, buruan add dia kemari biar bisa gua nyayiin</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -805,7 +805,7 @@ async def jiosaavn(client: Client, message_: Message):
     text = message_.text.split(" ", 1)
     query = text[1]
     res = lel
-    await res.edit(f"Searching 👀👀👀 for `{query}` on jio saavn")
+    await res.edit(f"Lagi nyari `{query}` di selokan")
     try:
         songs = await arq.saavn(query)
         if not songs.ok:
@@ -817,21 +817,21 @@ async def jiosaavn(client: Client, message_: Message):
         sthumb = "https://telegra.ph/file/f6086f8909fbfeb0844f2.png"
         sduration = int(songs.result[0].duration)
     except Exception as e:
-        await res.edit("Found Literally Nothing!, You Should Work On Your English.")
+        await res.edit("Gak nemu apa apa gua, makanya pake bahasa inggris tot kan gua dari jepang")
         print(str(e))
         return
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="cplaylist"),
-                InlineKeyboardButton("Menu ⏯ ", callback_data="cmenu"),
+                InlineKeyboardButton("Daftar Lagu", callback_data="cplaylist"),
+                InlineKeyboardButton("Menu", callback_data="cmenu"),
             ],
             [
                 InlineKeyboardButton(
-                    text="Join Updates Channel", url=f"https://t.me/{updateschannel}"
+                    text="Join Updates Channel", url=f"https://t.me/asupanviralid"
                 )
             ],
-            [InlineKeyboardButton(text="❌ Close", callback_data="ccls")],
+            [InlineKeyboardButton(text="Tutup", callback_data="ccls")],
         ]
     )
     file_path = await convert(wget.download(slink))
@@ -849,11 +849,11 @@ async def jiosaavn(client: Client, message_: Message):
             chat_id=message_.chat.id,
             reply_markup=keyboard,
             photo="final.png",
-            caption=f"{bn}=#️⃣ Queued at position {position}",
+            caption=f"{bn}=#️Masuk antrian nomor {position}",
         )
 
     else:
-        await res.edit_text(f"{bn}=▶️ Playing.....")
+        await res.edit_text(f"{bn}=Lagi nyannyi")
         que[chat_id] = []
         qeue = que.get(chat_id)
         s_name = sname
@@ -869,7 +869,7 @@ async def jiosaavn(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"Playing {sname} Via Jiosaavn in linked channel",
+        caption=f"Lagi nyanyi {sname} Cover auara gua yang sangat amat merdu ini",
     )
     os.remove("final.png")
 
