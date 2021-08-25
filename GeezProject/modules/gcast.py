@@ -20,7 +20,7 @@ async def broadcast(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         return
     else:
-        wtf = await message.reply("`memulai global cast...`")
+        wtf = await message.reply("`mulai broadcast global`")
         if not message.reply_to_message:
             await wtf.edit("balas ke pesan untuk melakukan broadcast!")
             return
