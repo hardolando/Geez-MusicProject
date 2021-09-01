@@ -1,6 +1,6 @@
-# Daisyxmusic (Telegram bot project)
-# Copyright (C) 2021  Inukaasith
-# Copyright (C) 2021  TheHamkerCat (Python_ARQ)
+# Daisyxbapak kau music (Telegram bot project)
+# Copyright (C) 2021  papanda
+# Copyright (C) 2021  ur fckn goat (Python_ARQ)
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
@@ -64,7 +64,7 @@ def cb_admin_check(func: Callable) -> Callable:
         if cb.from_user.id in admemes:
             return await func(client, cb)
         else:
-            await cb.answer("Kamu tidak diizinkan!", show_alert=True)
+            await cb.answer("lo sapa?", show_alert=True)
             return
 
     return decorator
@@ -130,19 +130,19 @@ async def playlist(client, message):
         return    
     queue = que.get(message.chat.id)
     if not queue:
-        await message.reply_text("**Sedang tidak Memutar lagu**")
+        await message.reply_text("**bapak kau jelek aku gamau nyanyi**")
     temp = []
     for t in queue:
         temp.append(t)
     now_playing = temp[0][0]
     by = temp[0][1].mention(style="md")
-    msg = "**Lagu Yang Sedang dimainkan** di {}".format(message.chat.title)
+    msg = "**bapak kau gua tendang** di {}".format(message.chat.title)
     msg += "\n• " + now_playing
-    msg += "\n• Req by " + by
+    msg += "\n• yang request jelek " + by
     temp.pop(0)
     if temp:
         msg += "\n\n"
-        msg += "**Antrian Lagu**"
+        msg += "**ngantri bos**"
         for song in temp:
             name = song[0]
             usr = song[1].mention(style="md")
@@ -157,13 +157,13 @@ async def playlist(client, message):
 def updated_stats(chat, queue, vol=100):
     if chat.id in callsmusic.pytgcalls.active_calls:
         # if chat.id in active_chats:
-        stats = "Pengaturan dari **{}**".format(chat.title)
+        stats = "Pengaturan **{}**".format(chat.title)
         if len(que) > 0:
             stats += "\n\n"
             stats += "Volume : {}%\n".format(vol)
-            stats += "Lagu dalam antrian : `{}`\n".format(len(que))
-            stats += "Sedang memutar lagu : **{}**\n".format(queue[0][0])
-            stats += "Requested by : {}".format(queue[0][1].mention)
+            stats += "antrian lagu : `{}`\n".format(len(que))
+            stats += "Sedang memitar kepala bapak kau : **{}**\n".format(queue[0][0])
+            stats += "yang request jelek : {}".format(queue[0][1].mention)
     else:
         stats = None
     return stats
@@ -183,9 +183,9 @@ def r_ply(type_):
                 InlineKeyboardButton("⏭", "skip"),
             ],
             [
-                InlineKeyboardButton("📖 Playlist", "playlist"),
+                InlineKeyboardButton("daptar", "playlist"),
             ],
-            [InlineKeyboardButton("🗑 Close", "cls")],
+            [InlineKeyboardButton("tutup ae", "cls")],
         ]
     )
     return mar
@@ -200,14 +200,14 @@ async def ee(client, message):
     if stats:
         await message.reply(stats)
     else:
-        await message.reply("**Silahkan Nyalakan dulu VCG nya!**")
+        await message.reply("**vcg nya nyalain dulu goblok**")
 
 
 @Client.on_message(filters.command("player") & filters.group & ~filters.edited)
 @authorized_users_only
 async def settings(client, message):
     if message.chat.id in DISABLED_GROUPS:
-        await message.reply("**Music Player dimatikan**")
+        await message.reply("**gua berhenti nyanyi lagu**")
         return    
     playing = None
     chat_id = get_chat_id(message.chat)
@@ -222,7 +222,9 @@ async def settings(client, message):
         else:
             await message.reply(stats, reply_markup=r_ply("play"))
     else:
-        await message.reply("**Silahkan Nyalakan dulu VCG nya!**")
+        await message.reply("**nyalain vcg nya dulu goblok
+                            
+                            **")
 
 
 @Client.on_message(
@@ -237,15 +239,15 @@ async def hfmm(_, message):
         return
     if len(message.command) != 2:
         await message.reply_text(
-            "**Saya hanya mengenali** `/musicplayer on` **dan** `/musicplayer off`"
+            "**gua ngertinya** `/musicplayer on` **sama** `/musicplayer off`"
         )
         return
     status = message.text.split(None, 1)[1]
     message.chat.id
     if status == "ON" or status == "on" or status == "On":
-        lel = await message.reply("`Processing...`")
+        lel = await message.reply("sabarlah goblok")
         if not message.chat.id in DISABLED_GROUPS:
-            await lel.edit("**Pemutar Musik Sudah Diaktifkan Di Obrolan Ini**")
+            await lel.edit("**ini udah gua nyanyiin jangan protes mulu blok**")
             return
         DISABLED_GROUPS.remove(message.chat.id)
         await lel.edit(
